@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tello Drone Web Interface</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tello Drone Web Interface</h1>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" id="video" width="640" height="480">
+        </div>
+        <div class="controls-container">
+            <div class="row">
+                <button onclick="sendCommand('takeoff')" class="btn btn-primary">Takeoff</button>
+                <button onclick="sendCommand('land')" class="btn btn-danger">Land</button>
+            </div>
+            <div class="row">
+                <button onclick="sendCommand('up')" class="btn"><i class="fas fa-chevron-up"></i></button>
+            </div>
+            <div class="row">
+                <button onclick="sendCommand('left')" class="btn"><i class="fas fa-chevron-left"></i></button>
+                <button onclick="sendCommand('down')" class="btn"><i class="fas fa-chevron-down"></i></button>
+                <button onclick="sendCommand('right')" class="btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="row">
+                <button onclick="sendCommand('forward')" class="btn"><i class="fas fa-arrow-up"></i></button>
+                <button onclick="sendCommand('backward')" class="btn"><i class="fas fa-arrow-down"></i></button>
+            </div>
+            <div class="row">
+                <button onclick="sendCommand('rotate_left')" class="btn"><i class="fas fa-undo"></i></button>
+                <button onclick="sendCommand('rotate_right')" class="btn"><i class="fas fa-redo"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function sendCommand(command) {
+            $.ajax({
+                type: 'POST',
+                url: '/',
+                data: { 'command': command },
+                success: function(data) {
+                    console.log('Command sent: ' + command);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
