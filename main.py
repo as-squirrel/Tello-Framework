@@ -32,21 +32,21 @@ def drone_control():
             elif command == 'land':
                 tello.land()
             elif command == 'up':
-                tello.move_up(30)
+                tello.move_up(35)
             elif command == 'down':
-                tello.move_down(30)
+                tello.move_down(35)
             elif command == 'forward':
-                tello.move_forward(30)
+                tello.move_forward(35)
             elif command == 'backward':
-                tello.move_backward(30)
+                tello.move_backward(35)
             elif command == 'left':
-                tello.move_left(30)
+                tello.move_left(35)
             elif command == 'right':
-                tello.move_right(30)
+                tello.move_right(35)
             elif command == 'rotate_left':
-                tello.rotate_counter_clockwise(30)
+                tello.rotate_counter_clockwise(35)
             elif command == 'rotate_right':
-                tello.rotate_clockwise(30)
+                tello.rotate_clockwise(35)
 
 def start_drone_thread():
     tello.connect()

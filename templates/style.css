@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #8d7f7f;
+    background-color: #f3eeee;
     margin: 0;
     padding: 0;
 }
@@ -13,6 +13,12 @@ body {
 
 h1 {
     text-align: center;
+    color: #00a7b3;
+}
+
+h2 {
+    text-align: center;
+    color: #22759b;
 }
 
 .video-container {
