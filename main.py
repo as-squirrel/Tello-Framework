@@ -17,6 +17,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS user
 app = Flask(__name__)
 tello = Tello()
 
+@app.route('/register')
 
 def register(name, password):
     try:
@@ -27,7 +28,7 @@ def register(name, password):
 
     except sqlite3.IntegrityError:
         print("The user already exists")
-
+@app.route('/login')
 def login(name, password):
     c.execute('''SELECT * FROM user WHERE name = ? AND password = ?''', (name, password))
     user = c.fetchone()
