@@ -3,9 +3,32 @@ from djitellopy import Tello
 import threading
 import time
 import cv2
+import sqlite3
+
+conn = sqlite3.connect("database.db")
+
+c = conn.cursor()
+
+c.execute('''CREATE TABLE IF NOT EXISTS benutzer
+             (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+              name TEXT NOT NULL UNIQUE, 
+              passwort TEXT NOT NULL)''')
 
 app = Flask(__name__)
 tello = Tello()
+
+
+def register(name, password):
+    try:
+
+        c.execute('''INSERT INTO benutzer (name, passwort)
+                     VALUES (?, ?)''', (name, password))
+        conn.commit()
+
+    except sqlite3.IntegrityError:
+        print("The user already exists")
+
+    
 
 def video_feed():
     while True:
