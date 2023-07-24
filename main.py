@@ -9,10 +9,10 @@ conn = sqlite3.connect("database.db")
 
 c = conn.cursor()
 
-c.execute('''CREATE TABLE IF NOT EXISTS benutzer
+c.execute('''CREATE TABLE IF NOT EXISTS user
              (id INTEGER PRIMARY KEY AUTOINCREMENT, 
               name TEXT NOT NULL UNIQUE, 
-              passwort TEXT NOT NULL)''')
+              password TEXT NOT NULL)''')
 
 app = Flask(__name__)
 tello = Tello()
@@ -21,14 +21,22 @@ tello = Tello()
 def register(name, password):
     try:
 
-        c.execute('''INSERT INTO benutzer (name, passwort)
+        c.execute('''INSERT INTO user (name, password)
                      VALUES (?, ?)''', (name, password))
         conn.commit()
 
     except sqlite3.IntegrityError:
         print("The user already exists")
 
-    
+def login(name, password):
+    c.execute('''SELECT * FROM user WHERE name = ? AND password = ?''', (name, password))
+    user = c.fetchone()
+    if user:
+        print("Anmeldung erfolgreich!")
+        return user
+    else:
+        print("Wrong username or password!")
+
 
 def video_feed():
     while True:
