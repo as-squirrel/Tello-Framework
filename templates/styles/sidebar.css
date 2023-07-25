@@ -28,14 +28,14 @@ body {
   }
   
   .sidebar li {
-    padding: 12px 0;
+    padding: 20px 0;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .sidebar li:hover {
-    background-color: #1565C0;
+    background-color: #245ea0;
   }
   
   .content {
@@ -51,13 +51,13 @@ body {
   .sidebar li:after {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(223, 171, 205, 0.3);
     pointer-events: none;
     transition: width 0.3s ease, height 0.3s ease;
   }
