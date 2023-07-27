@@ -4,6 +4,7 @@
     <title>Tello Drone Web Interface</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/sidebar.css">
 </head>
 <body>
     <div class="container">
@@ -12,6 +13,17 @@
         <div class="video-container">
             <img src="{{ url_for('video_feed') }}" id="video" width="640" height="480">
         </div>
+        <div class="sidebar">
+            <h1>Tello Framework</h1>
+            <ul>
+              <li>Home</li>
+              <li>Settings</li>
+              <li>Database</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+          <div class="content">
+          </div>
         <div class="controls-container">
             <div class="row">
                 <button onclick="sendCommand('takeoff')" class="btn btn-primary">Takeoff</button>
