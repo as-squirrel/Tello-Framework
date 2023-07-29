@@ -33,6 +33,8 @@ body {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: 'Handjet', cursive;
+
 }
 
 
@@ -51,11 +53,11 @@ body {
   position: absolute;
   top: 0%;
   left: 100%;
-  transform: translate(-50%, -5%);
+  transform: translate(-50%, -30%);
   width: 0;
   height: 0;
-  border-radius: 50%;
-  background-color: #ff8688;
+  border-radius: 80%;
+  background-color: #23CE6B;
   pointer-events: none;
   transition: width 0.3s ease, height 0.3s ease;
 
