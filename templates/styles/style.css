@@ -18,7 +18,7 @@ h1 {
 
 h2 {
     text-align: center;
-    color: #4A5899;
+    color: #5438DC;
 }
 
 
@@ -67,15 +67,15 @@ footer{
 }
 
 .controls-container .btn:hover {
-    background-color: #e0e0e0;
+    background-color: #4A5899;
 }
 
 .controls-container .btn-primary {
-    background-color: #007bff;
+    background-color: #23CE6B;
     color: #fff;
 }
 
 .controls-container .btn-danger {
-    background-color: #dc3545;
+    background-color: #FF7477;
     color: #fff;
 }
