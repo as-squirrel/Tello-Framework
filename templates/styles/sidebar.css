@@ -5,7 +5,7 @@ body {
 }
 
 .sidebar {
-  background-color: #1976D2;
+  background-color: #4A5899;
   color: #fff;
   width: 250px;
   height: 100%;
@@ -54,7 +54,7 @@ body {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background-color: rgba(27, 175, 212, 0.3);
+  background-color: #ff8688;
   pointer-events: none;
   transition: width 0.3s ease, height 0.3s ease;
 }
