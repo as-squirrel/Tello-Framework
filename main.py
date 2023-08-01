@@ -5,38 +5,9 @@ import time
 import cv2
 import sqlite3
 
-conn = sqlite3.connect("database.db")
-
-c = conn.cursor()
-
-c.execute('''CREATE TABLE IF NOT EXISTS user
-             (id INTEGER PRIMARY KEY AUTOINCREMENT, 
-              name TEXT NOT NULL UNIQUE, 
-              password TEXT NOT NULL)''')
 
 app = Flask(__name__)
 tello = Tello()
-
-@app.route('/register')
-
-def register(name, password):
-    try:
-
-        c.execute('''INSERT INTO user (name, password)
-                     VALUES (?, ?)''', (name, password))
-        conn.commit()
-
-    except sqlite3.IntegrityError:
-        print("The user already exists")
-@app.route('/login')
-def login(name, password):
-    c.execute('''SELECT * FROM user WHERE name = ? AND password = ?''', (name, password))
-    user = c.fetchone()
-    if user:
-        print("Anmeldung erfolgreich!")
-        return user
-    else:
-        print("Wrong username or password!")
 
 
 def video_feed():

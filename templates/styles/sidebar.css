@@ -51,20 +51,21 @@ body {
 .sidebar li:after {
   content: "";
   position: absolute;
-  top: 0%;
-  left: 100%;
-  transform: translate(-50%, -30%);
+  top: 10%;
+  left: 78%;
+  transform: translate(-40%, 3%);
   width: 0;
   height: 0;
   border-radius: 80%;
-  background-color: #23CE6B;
+  background-color: #fda1a3;
   pointer-events: none;
-  transition: width 0.3s ease, height 0.3s ease;
+  transition: width 0.3s ease, height 0.5s ease;
 
 }
 
 .sidebar li:hover:after {
-  width: 200px;
-  height: 200px;
+  width: 70px;
+  height: 70px;
+
 }
 
